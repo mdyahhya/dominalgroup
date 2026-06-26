@@ -1,0 +1,1785 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dominal Group of Companies</title>
+    <meta name="description"
+        content="Dominal Group is a diversified business group building, managing, and scaling companies across industries through technology, marketing, and strategic partnerships.">
+    <link rel="canonical" href="https://group.dominal.in/">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400..900;1,400..900&family=DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000&display=swap"
+        rel="stylesheet">
+    <!-- Font Awesome for clean, pixel-perfect social icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+    <style>
+        :root {
+            --font-display: 'Playfair Display', serif;
+            --font-body: 'DM Sans', sans-serif;
+            --bg: #ffffff;
+            --bg-alt: #f8fafc;
+            --fg: #0f172a;
+            --fg-muted: #475569;
+            --primary: #0B2343;
+            --primary-light: #1a3a66;
+            --primary-glow: rgba(11, 35, 67, 0.04);
+            --accent: #0B2343;
+            --accent-glow: rgba(11, 35, 67, 0.06);
+            --border: #e2e8f0;
+            --r-sm: 8px;
+            --r-md: 16px;
+            --r-lg: 24px;
+            --r-full: 9999px;
+            --ease: cubic-bezier(0.16, 1, 0.3, 1);
+            --shadow-sm: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
+            --shadow-md: 0 4px 6px -1px rgba(0, 0, 0, 0.05), 0 2px 4px -2px rgba(0, 0, 0, 0.05);
+            --shadow-lg: 0 10px 15px -3px rgba(0, 0, 0, 0.05), 0 4px 6px -4px rgba(0, 0, 0, 0.05);
+        }
+
+        *,
+        *::before,
+        *::after {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0
+        }
+
+        html {
+            scroll-behavior: smooth;
+            background: var(--bg);
+            color: var(--fg)
+        }
+
+        body {
+            font-family: var(--font-body);
+            overflow-x: hidden;
+            -webkit-font-smoothing: antialiased;
+            line-height: 1.6
+        }
+
+        a {
+            color: inherit;
+            text-decoration: none;
+            transition: all .3s var(--ease)
+        }
+
+        ::-webkit-scrollbar {
+            width: 6px
+        }
+
+        ::-webkit-scrollbar-track {
+            background: var(--bg-alt)
+        }
+
+        ::-webkit-scrollbar-thumb {
+            background: #cbd5e1;
+            border-radius: 3px
+        }
+
+        .container {
+            max-width: 1140px;
+            margin: 0 auto;
+            padding: 0 1.5rem
+        }
+
+        /* Preloader styling */
+        #preloader {
+            position: fixed;
+            inset: 0;
+            background: #ffffff;
+            z-index: 9999;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            opacity: 1;
+            transition: opacity 0.6s var(--ease);
+        }
+
+        .preloader-title {
+            font-family: var(--font-display);
+            font-size: 2.2rem;
+            font-weight: 700;
+            color: var(--primary);
+            margin-bottom: 1.25rem;
+            letter-spacing: -0.02em;
+        }
+
+        .preloader-spinner {
+            width: 80px;
+            height: 4px;
+            background: #f1f5f9;
+            border-radius: var(--r-full);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .preloader-bar {
+            position: absolute;
+            height: 100%;
+            width: 40%;
+            background: var(--primary);
+            border-radius: var(--r-full);
+            animation: loadingProgress 1.6s infinite ease-in-out;
+        }
+
+        @keyframes loadingProgress {
+            0% {
+                left: -40%;
+            }
+
+            50% {
+                left: 100%;
+            }
+
+            100% {
+                left: 100%;
+            }
+        }
+
+        /* Navigation Header */
+        #nav {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            z-index: 100;
+            height: 72px;
+            display: flex;
+            align-items: center;
+            background: rgba(255, 255, 255, 0.85);
+            backdrop-filter: blur(16px);
+            -webkit-backdrop-filter: blur(16px);
+            border-bottom: 1px solid var(--border);
+            transition: all .3s var(--ease)
+        }
+
+        #nav.scrolled {
+            box-shadow: var(--shadow-sm);
+            background: rgba(255, 255, 255, 0.95);
+        }
+
+        .nav-inner {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            width: 100%
+        }
+
+        .nav-logo {
+            font-family: var(--font-display);
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: var(--primary);
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .nav-logo-img {
+            height: 36px;
+            width: auto;
+            border-radius: 4px;
+            object-fit: contain;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 2.2rem;
+            align-items: center;
+        }
+
+        .nav-links a {
+            font-size: .88rem;
+            font-weight: 500;
+            color: var(--fg-muted);
+        }
+
+        .nav-links a:hover {
+            color: var(--primary)
+        }
+
+        .nav-cta {
+            background: var(--primary);
+            color: #ffffff !important;
+            padding: 0.55rem 1.2rem;
+            border-radius: var(--r-sm);
+            font-size: 0.85rem;
+            font-weight: 600;
+            transition: all 0.25s ease;
+        }
+
+        .nav-cta:hover {
+            background: var(--primary-light);
+            transform: translateY(-1px);
+        }
+
+        /* Mobile Hamburger Button */
+        .hamburger-btn {
+            display: none;
+            background: none;
+            border: none;
+            cursor: pointer;
+            padding: 0.5rem;
+            z-index: 110;
+        }
+
+        .hamburger-btn span {
+            display: block;
+            width: 22px;
+            height: 2px;
+            background: var(--fg);
+            margin-bottom: 4px;
+            transition: all 0.3s ease;
+        }
+
+        .hamburger-btn span:last-child {
+            margin-bottom: 0;
+        }
+
+        .hamburger-btn.open span:nth-child(1) {
+            transform: translateY(6px) rotate(45deg);
+        }
+
+        .hamburger-btn.open span:nth-child(2) {
+            opacity: 0;
+        }
+
+        .hamburger-btn.open span:nth-child(3) {
+            transform: translateY(-6px) rotate(-45deg);
+        }
+
+        /* Mobile Menu Drawer */
+        .mobile-drawer {
+            position: fixed;
+            top: 0;
+            right: -100%;
+            width: 280px;
+            height: 100vh;
+            background: #ffffff;
+            z-index: 105;
+            box-shadow: -4px 0 20px rgba(0, 0, 0, 0.05);
+            padding: 90px 2rem 2rem;
+            display: flex;
+            flex-direction: column;
+            gap: 1.5rem;
+            transition: right 0.4s var(--ease);
+        }
+
+        .mobile-drawer.open {
+            right: 0;
+        }
+
+        .mobile-drawer a {
+            font-size: 1.05rem;
+            font-weight: 500;
+            color: var(--fg-muted);
+            padding-bottom: 0.5rem;
+            border-bottom: 1px solid var(--border);
+        }
+
+        .mobile-drawer a:hover {
+            color: var(--primary);
+        }
+
+        .mobile-drawer .nav-cta {
+            border-bottom: none;
+            text-align: center;
+            margin-top: 1rem;
+        }
+
+        .drawer-overlay {
+            position: fixed;
+            inset: 0;
+            background: rgba(0, 0, 0, 0.2);
+            z-index: 102;
+            opacity: 0;
+            pointer-events: none;
+            transition: opacity 0.4s ease;
+        }
+
+        .drawer-overlay.open {
+            opacity: 1;
+            pointer-events: all;
+        }
+
+        @media(max-width: 768px) {
+            .nav-links {
+                display: none
+            }
+
+            .hamburger-btn {
+                display: block
+            }
+        }
+
+        /* Hero Section with Video Background */
+        #hero {
+            position: relative;
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            padding: 130px 0 80px;
+            background: #000000;
+            overflow: hidden
+        }
+
+        .vid-wrap {
+            position: absolute;
+            inset: 0;
+            z-index: 0;
+            pointer-events: none;
+        }
+
+        .vid-wrap video {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        /* Ambient gradient transition at the bottom to blend video into content */
+        .vid-overlay {
+            position: absolute;
+            inset: 0;
+            background: linear-gradient(to bottom, rgba(0, 0, 0, 0.15) 75%, var(--bg) 100%);
+        }
+
+        .hero-content {
+            position: relative;
+            z-index: 5;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            text-align: center;
+            width: 100%;
+            color: #ffffff;
+            /* Give text a slight premium shadow to stay fully legible on direct video feed */
+            text-shadow: 0 2px 10px rgba(0, 0, 0, 0.45);
+        }
+
+        .logo-wrap {
+            margin-bottom: 1.5rem;
+            animation: scaleIn 0.8s var(--ease) both
+        }
+
+        .logo-wrap img {
+            max-width: 180px;
+            height: auto;
+            border: none;
+        }
+
+        .hero-eyebrow {
+            font-family: var(--font-display);
+            font-size: 1.25rem;
+            font-weight: 700;
+            color: #ffffff;
+            margin-bottom: 0.5rem;
+            animation: upIn 0.8s var(--ease) both;
+            letter-spacing: -0.015em;
+        }
+
+        .hero-h1 {
+            font-family: var(--font-display);
+            font-size: clamp(3.2rem, 7vw, 5.5rem);
+            line-height: .98;
+            font-weight: 800;
+            color: #ffffff;
+            letter-spacing: -.025em;
+            margin-bottom: 1.5rem;
+            animation: upIn 0.8s var(--ease) 0.1s both
+        }
+
+        .hero-desc {
+            font-size: 1.05rem;
+            color: #f1f5f9;
+            max-width: 660px;
+            line-height: 1.75;
+            margin-bottom: 2.5rem;
+            animation: upIn 0.8s var(--ease) 0.25s both
+        }
+
+        @keyframes upIn {
+            from {
+                opacity: 0;
+                transform: translateY(20px)
+            }
+
+            to {
+                opacity: 1;
+                transform: translateY(0)
+            }
+        }
+
+        @keyframes scaleIn {
+            from {
+                opacity: 0;
+                transform: scale(.95)
+            }
+
+            to {
+                opacity: 1;
+                transform: scale(1)
+            }
+        }
+
+        /* Section Styling */
+        .section {
+            padding: 7.5rem 0;
+            border-bottom: 1px solid var(--border);
+        }
+
+        .section-alt {
+            background: var(--bg-alt);
+        }
+
+        .section-header {
+            max-width: 700px;
+            margin: 0 auto 4.5rem;
+            text-align: center;
+        }
+
+        .section-eyebrow-small {
+            font-size: 0.72rem;
+            font-weight: 600;
+            letter-spacing: 0.15em;
+            text-transform: uppercase;
+            color: var(--primary-light);
+            display: inline-block;
+            margin-bottom: 0.75rem;
+        }
+
+        .section-h2 {
+            font-family: var(--font-display);
+            font-size: clamp(2.2rem, 4.5vw, 3.4rem);
+            font-weight: 700;
+            color: var(--primary);
+            line-height: 1.1;
+            margin-bottom: 1rem;
+        }
+
+        .section-p {
+            font-size: 1.05rem;
+            color: var(--fg-muted);
+            font-weight: 400;
+        }
+
+        /* Architecture Grid (Portfolio) */
+        .arch-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 2.5rem;
+            align-items: start;
+        }
+
+        @media(max-width: 900px) {
+            .arch-grid {
+                grid-template-columns: 1fr;
+                gap: 3.5rem;
+            }
+        }
+
+        .arch-col-title {
+            font-family: var(--font-display);
+            font-size: 1.8rem;
+            font-weight: 700;
+            color: var(--primary);
+            margin-bottom: 1.75rem;
+            display: flex;
+            align-items: center;
+            gap: 0.75rem;
+        }
+
+        .arch-col-title svg {
+            width: 22px;
+            height: 22px;
+            stroke: var(--primary-light);
+            stroke-width: 2;
+        }
+
+        .arch-cards {
+            display: flex;
+            flex-direction: column;
+            gap: 1.5rem;
+        }
+
+        .arch-card {
+            background: #ffffff;
+            border: 1px solid var(--border);
+            border-radius: var(--r-md);
+            padding: 2rem;
+            box-shadow: var(--shadow-sm);
+            transition: all 0.3s var(--ease);
+        }
+
+        .arch-card:hover {
+            border-color: var(--primary-light);
+            box-shadow: var(--shadow-md);
+            transform: translateY(-2px);
+        }
+
+        .arch-card-badge {
+            display: inline-block;
+            font-size: 0.68rem;
+            font-weight: 600;
+            letter-spacing: 0.08em;
+            text-transform: uppercase;
+            color: var(--primary-light);
+            background: var(--accent-glow);
+            border: 1px solid rgba(11, 35, 67, 0.12);
+            padding: 0.25rem 0.75rem;
+            border-radius: var(--r-full);
+            margin-bottom: 1rem;
+        }
+
+        .arch-card-badge.partnership {
+            color: #10b981;
+            background: rgba(16, 185, 129, 0.06);
+            border-color: rgba(16, 185, 129, 0.12);
+        }
+
+        .arch-card-logo-wrap {
+            height: clamp(40px, 5.5vw, 52px);
+            margin-bottom: 0.85rem;
+            display: flex;
+            align-items: center;
+        }
+
+        .arch-card-logo-wrap img {
+            height: 100%;
+            width: auto;
+            object-fit: contain;
+        }
+
+        .arch-card h3 {
+            font-family: var(--font-display);
+            font-size: 1.45rem;
+            font-weight: 700;
+            color: var(--primary);
+            margin-bottom: 0.6rem;
+        }
+
+        .arch-card p {
+            font-size: 0.92rem;
+            color: var(--fg-muted);
+            line-height: 1.6;
+        }
+
+        /* Solo Founders Section */
+        .founders-card {
+            background: #ffffff;
+            border: 1.5px solid var(--border);
+            border-radius: var(--r-lg);
+            padding: 3rem;
+            box-shadow: var(--shadow-md);
+            margin-top: 3.5rem;
+            text-align: center;
+            max-width: 900px;
+            margin-left: auto;
+            margin-right: auto;
+            transition: all 0.35s ease;
+        }
+
+        .founders-card:hover {
+            border-color: var(--primary-light);
+            box-shadow: var(--shadow-lg);
+        }
+
+        .founders-tagline {
+            font-family: var(--font-display);
+            font-size: 1.85rem;
+            font-weight: 700;
+            color: var(--primary);
+            margin-bottom: 1.25rem;
+        }
+
+        .founders-tagline em {
+            font-style: italic;
+            color: var(--primary-light);
+        }
+
+        .founders-desc {
+            font-size: 1.02rem;
+            color: var(--fg-muted);
+            line-height: 1.7;
+            max-width: 760px;
+            margin: 0 auto 2.2rem;
+        }
+
+        .founders-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 2rem;
+            text-align: left;
+            margin-top: 2rem;
+            padding-top: 2rem;
+            border-top: 1px solid var(--border);
+        }
+
+        @media(max-width: 640px) {
+            .founders-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        .founder-feat {
+            display: flex;
+            align-items: flex-start;
+            gap: 0.85rem;
+        }
+
+        .founder-feat svg {
+            width: 20px;
+            height: 20px;
+            stroke: #10b981;
+            stroke-width: 2.5;
+            fill: none;
+            margin-top: 0.15rem;
+            flex-shrink: 0;
+        }
+
+        .founder-feat h4 {
+            font-size: 0.95rem;
+            font-weight: 700;
+            color: var(--primary);
+            margin-bottom: 0.3rem;
+        }
+
+        .founder-feat p {
+            font-size: 0.88rem;
+            color: var(--fg-muted);
+            line-height: 1.5;
+        }
+
+        /* Services & How We Work */
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 2rem;
+            margin-top: 1rem;
+        }
+
+        @media(max-width: 640px) {
+            .services-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        .service-card {
+            background: #ffffff;
+            border: 1px solid var(--border);
+            border-radius: var(--r-md);
+            padding: 2.2rem;
+            box-shadow: var(--shadow-sm);
+            transition: all 0.3s var(--ease);
+            display: flex;
+            flex-direction: column;
+            align-items: start;
+        }
+
+        .service-card:hover {
+            border-color: var(--primary-light);
+            box-shadow: var(--shadow-md);
+        }
+
+        .service-card.featured {
+            grid-column: span 2;
+            background: var(--primary-glow);
+            border-color: rgba(11, 35, 67, 0.1);
+        }
+
+        @media(max-width: 640px) {
+            .service-card.featured {
+                grid-column: span 1;
+            }
+        }
+
+        .service-icon-box {
+            width: 44px;
+            height: 44px;
+            background: var(--bg-alt);
+            border: 1px solid var(--border);
+            border-radius: var(--r-sm);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 1.25rem;
+            transition: all 0.3s ease;
+        }
+
+        .service-card:hover .service-icon-box {
+            background: var(--accent-glow);
+            border-color: rgba(11, 35, 67, 0.2);
+        }
+
+        .service-icon-box svg {
+            width: 20px;
+            height: 20px;
+            stroke: var(--primary);
+            stroke-width: 1.8;
+            fill: none;
+            transition: all 0.3s ease;
+        }
+
+        .service-card:hover .service-icon-box svg {
+            stroke: var(--primary-light);
+        }
+
+        .service-card h3 {
+            font-family: var(--font-display);
+            font-size: 1.35rem;
+            font-weight: 700;
+            color: var(--primary);
+            margin-bottom: 0.6rem;
+        }
+
+        .service-card p {
+            font-size: 0.9rem;
+            color: var(--fg-muted);
+            line-height: 1.65;
+        }
+
+        /* SVG Animation Section */
+        .model-visual-grid {
+            display: grid;
+            grid-template-columns: 1.1fr 0.9fr;
+            gap: 4.5rem;
+            align-items: center;
+        }
+
+        @media(max-width: 900px) {
+            .model-visual-grid {
+                grid-template-columns: 1fr;
+                gap: 3.5rem;
+            }
+
+            .model-visual-left {
+                order: 2;
+            }
+        }
+
+        .svg-container {
+            width: 100%;
+            max-width: 420px;
+            margin: 0 auto;
+            background: #ffffff;
+            border: 1px solid var(--border);
+            border-radius: var(--r-lg);
+            padding: 1.5rem;
+            box-shadow: var(--shadow-sm);
+        }
+
+        .svg-container svg {
+            width: 100%;
+            height: auto;
+            display: block;
+        }
+
+        .how-works-text h3 {
+            font-family: var(--font-display);
+            font-size: 1.8rem;
+            font-weight: 700;
+            color: var(--primary);
+            margin-bottom: 1rem;
+        }
+
+        .how-works-text p {
+            font-size: 0.95rem;
+            color: var(--fg-muted);
+            line-height: 1.7;
+            margin-bottom: 1.5rem;
+        }
+
+        .bullet-list {
+            list-style: none;
+            display: flex;
+            flex-direction: column;
+            gap: 0.85rem;
+        }
+
+        .bullet-item {
+            display: flex;
+            align-items: flex-start;
+            gap: 0.75rem;
+            font-size: 0.9rem;
+            color: var(--fg-muted);
+        }
+
+        .bullet-item svg {
+            width: 18px;
+            height: 18px;
+            stroke: var(--primary-light);
+            stroke-width: 2;
+            fill: none;
+            flex-shrink: 0;
+            margin-top: 0.15rem;
+        }
+
+        /* Contact/Inquiry Form */
+        .contact-grid {
+            display: grid;
+            grid-template-columns: 0.9fr 1.1fr;
+            gap: 4.5rem;
+            align-items: start;
+        }
+
+        @media(max-width: 900px) {
+            .contact-grid {
+                grid-template-columns: 1fr;
+                gap: 3.5rem;
+            }
+        }
+
+        .contact-info-title {
+            font-family: var(--font-display);
+            font-size: 1.8rem;
+            font-weight: 700;
+            color: var(--primary);
+            margin-bottom: 1rem;
+        }
+
+        .contact-info-p {
+            font-size: 0.95rem;
+            color: var(--fg-muted);
+            line-height: 1.65;
+            margin-bottom: 2.5rem;
+        }
+
+        .contact-channels {
+            display: flex;
+            flex-direction: column;
+            gap: 1.5rem;
+        }
+
+        .channel-card {
+            display: flex;
+            align-items: center;
+            gap: 1.25rem;
+            padding: 1.2rem;
+            background: #ffffff;
+            border: 1px solid var(--border);
+            border-radius: var(--r-md);
+            box-shadow: var(--shadow-sm);
+            transition: all 0.3s ease;
+        }
+
+        .channel-card:hover {
+            border-color: var(--primary-light);
+            box-shadow: var(--shadow-md);
+            transform: translateX(3px);
+        }
+
+        .channel-icon {
+            width: 44px;
+            height: 44px;
+            background: var(--bg-alt);
+            border: 1px solid var(--border);
+            border-radius: var(--r-sm);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-shrink: 0;
+        }
+
+        .channel-icon svg {
+            width: 20px;
+            height: 20px;
+            stroke-width: 1.8;
+        }
+
+        .channel-icon.wa svg {
+            fill: #25D366;
+            stroke: none;
+        }
+
+        .channel-icon.ig svg {
+            stroke: #dd2a7b;
+            fill: none;
+        }
+
+        .channel-icon.mail svg {
+            stroke: var(--primary);
+            fill: none;
+        }
+
+        .channel-details span {
+            display: block;
+            font-size: 0.72rem;
+            font-weight: 600;
+            letter-spacing: 0.08em;
+            text-transform: uppercase;
+            color: var(--fg-muted);
+            margin-bottom: 0.15rem;
+        }
+
+        .channel-details a {
+            font-size: 1rem;
+            font-weight: 600;
+            color: var(--primary);
+        }
+
+        .channel-details a:hover {
+            color: var(--primary-light);
+        }
+
+        /* Form Box */
+        .form-box {
+            background: #ffffff;
+            border: 1px solid var(--border);
+            border-radius: var(--r-md);
+            padding: 2.5rem;
+            box-shadow: var(--shadow-md);
+        }
+
+        .form-row {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 1rem;
+        }
+
+        @media(max-width: 480px) {
+            .form-row {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        .fg {
+            display: flex;
+            flex-direction: column;
+            margin-bottom: 1.25rem;
+        }
+
+        .fg label {
+            font-size: 0.75rem;
+            font-weight: 600;
+            color: var(--fg-muted);
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+            margin-bottom: 0.4rem;
+        }
+
+        .fg input,
+        .fg textarea,
+        .fg select {
+            background: var(--bg-alt);
+            border: 1px solid var(--border);
+            padding: 0.75rem 1rem;
+            border-radius: var(--r-sm);
+            color: var(--fg);
+            font-family: var(--font-body);
+            font-size: 0.88rem;
+            outline: none;
+            transition: all 0.3s var(--ease);
+            width: 100%;
+        }
+
+        .fg input:focus,
+        .fg textarea:focus,
+        .fg select:focus {
+            border-color: var(--primary-light);
+            background: #ffffff;
+            box-shadow: 0 0 0 3px rgba(11, 35, 67, 0.08);
+        }
+
+        .fg textarea {
+            min-height: 110px;
+            resize: vertical;
+        }
+
+        .form-submit {
+            width: 100%;
+            background: var(--primary);
+            color: #ffffff;
+            font-family: var(--font-body);
+            font-weight: 600;
+            font-size: 0.9rem;
+            border: none;
+            padding: 0.85rem;
+            border-radius: var(--r-sm);
+            cursor: pointer;
+            transition: all 0.25s var(--ease);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 0.5rem;
+        }
+
+        .form-submit:hover {
+            background: var(--primary-light);
+            transform: translateY(-1px);
+        }
+
+        /* Footer */
+        footer {
+            padding: 4rem 0;
+            background: var(--bg-alt);
+            border-top: 1px solid var(--border);
+            font-size: 0.85rem;
+            color: var(--fg-muted);
+        }
+
+        .foot-inner {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 1.5rem;
+        }
+
+        .foot-brand {
+            font-family: var(--font-display);
+            font-size: 1.4rem;
+            font-weight: 700;
+            color: var(--primary);
+        }
+
+        .foot-links {
+            display: flex;
+            gap: 2rem;
+        }
+
+        .foot-links a:hover {
+            color: var(--primary);
+        }
+
+        /* Floating buttons on the right side */
+        .float-btns {
+            position: fixed;
+            bottom: 1.8rem;
+            right: 1.8rem;
+            display: flex;
+            flex-direction: column;
+            gap: 0.75rem;
+            z-index: 90;
+        }
+
+        .f-btn {
+            width: 52px;
+            height: 52px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            box-shadow: 0 4px 14px rgba(0, 0, 0, 0.15);
+            transition: all 0.3s var(--ease);
+            border: none;
+            cursor: pointer;
+            color: #ffffff;
+        }
+
+        .f-btn:hover {
+            transform: scale(1.08) translateY(-2px);
+            box-shadow: 0 6px 18px rgba(0, 0, 0, 0.2);
+        }
+
+        .f-wa {
+            background: #25D366;
+        }
+
+        .f-ig {
+            background: linear-gradient(135deg, #f58529, #dd2a7b, #8134af, #515bd4);
+        }
+
+        .reveal {
+            opacity: 0;
+            transform: translateY(20px);
+            transition: opacity 0.8s var(--ease), transform 0.8s var(--ease)
+        }
+
+        .reveal.visible {
+            opacity: 1;
+            transform: translateY(0)
+        }
+    </style>
+</head>
+
+<body>
+    <!-- Preloader Screen -->
+    <div id="preloader">
+        <div class="preloader-title">Dominal Group of Companies</div>
+        <div class="preloader-spinner">
+            <div class="preloader-bar"></div>
+        </div>
+    </div>
+
+    <!-- Sticky Nav Bar -->
+    <nav id="nav">
+        <div class="container nav-inner">
+            <a href="#hero" class="nav-logo">
+                <img src="dominalgrp.jpg" alt="Dominal Group Logo" class="nav-logo-img">
+                <span>Dominal Group</span>
+            </a>
+            <div class="nav-links">
+                <a href="#hero">Home</a>
+                <a href="#structure">Portfolio</a>
+                <a href="#founders">For Founders</a>
+                <a href="#services">Services</a>
+                <a href="#how-it-works">How We Work</a>
+                <a href="#contact">Inquiries</a>
+                <a href="#contact" class="nav-cta">Inquire Now</a>
+            </div>
+            <!-- Hamburger button for mobile -->
+            <button class="hamburger-btn" id="hamburgerBtn" aria-label="Toggle Menu">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+        </div>
+    </nav>
+
+    <!-- Drawer Menu Overlay -->
+    <div class="drawer-overlay" id="drawerOverlay"></div>
+
+    <!-- Mobile Drawer Menu -->
+    <div class="mobile-drawer" id="mobileDrawer">
+        <a href="#hero" class="drawer-link">Home</a>
+        <a href="#structure" class="drawer-link">Portfolio</a>
+        <a href="#founders" class="drawer-link">For Founders</a>
+        <a href="#services" class="drawer-link">Services</a>
+        <a href="#how-it-works" class="drawer-link">How We Work</a>
+        <a href="#contact" class="drawer-link">Inquiries</a>
+        <a href="#contact" class="nav-cta drawer-link">Inquire Now</a>
+    </div>
+
+    <!-- Hero Section -->
+    <section id="hero">
+        <!-- Background Video for the first page -->
+        <div class="vid-wrap">
+            <video id="bgVideo" autoplay muted loop playsinline preload="auto">
+                <source
+                    src="https://d8j0ntlcm91z4.cloudfront.net/user_38xzZboKViGWJOttwIXH07lWA1P/hf_20260403_050628_c4e32401-fab4-4a27-b7a8-6e9291cd5959.mp4"
+                    type="video/mp4">
+            </video>
+            <div class="vid-overlay"></div>
+        </div>
+        <div class="container hero-content">
+            <!-- Centerpiece logo commented out temporarily
+            <div class="logo-wrap">
+                <img src="dominal.png" alt="Dominal Group Centerpiece Logo">
+            </div>
+            -->
+            <!-- <div class="hero-eyebrow">Dominal Group</div> -->
+            <h1 class="hero-h1">Dominal Group of Companies</h1>
+            <p class="hero-desc">Dominal is working as the business partner for two companies currently, and has three
+                own ventures where Dominal owns 100%.</p>
+        </div>
+    </section>
+
+    <!-- Company Structure Grid (Portfolio) -->
+    <section id="structure" class="section">
+        <div class="container">
+            <div class="section-header reveal">
+                <span class="section-eyebrow-small">Our Architecture</span>
+                <h2 class="section-h2">Corporate Portfolio & Structure</h2>
+                <p class="section-p">We manage high-impact partnerships with established brands and drive our own 100%
+                    owned technology and educational software companies.</p>
+            </div>
+
+            <div class="arch-grid">
+                <!-- Column Left: Partnerships -->
+                <div class="reveal">
+                    <h3 class="arch-col-title">
+                        <svg viewBox="0 0 24 24" fill="none">
+                            <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2" />
+                            <circle cx="9" cy="7" r="4" />
+                            <path d="M23 21v-2a4 4 0 0 0-3-3.87" />
+                            <path d="M16 3.13a4 4 0 0 1 0 7.75" />
+                        </svg>
+                        We Partner With Businesses (Active Partnerships)
+                    </h3>
+                    <div class="arch-cards">
+                        <!-- Premium Linen Clothing Brand -->
+                        <div class="arch-card">
+                            <span class="arch-card-badge partnership">50% Online Operations Partner</span>
+                            <h3>Premium Linen Clothing Brand</h3>
+                            <p>Dominal manages the technology infrastructure, e-commerce scale, digital growth strategy,
+                                and high-volume operations — driving millions in monthly online sales.</p>
+                        </div>
+                        <!-- Healthcare Brand -->
+                        <div class="arch-card">
+                            <span class="arch-card-badge partnership">20% Digital Operations Partner</span>
+                            <h3>Healthcare Brand</h3>
+                            <p>Dominal runs the technology integration, digital operations, and logistics architecture —
+                                reliably delivering millions of wellness and medical items each month.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Column Right: Owned Ventures -->
+                <div class="reveal reveal-delay-1">
+                    <h3 class="arch-col-title">
+                        <svg viewBox="0 0 24 24" fill="none">
+                            <rect x="2" y="2" width="20" height="20" rx="5" />
+                            <path d="M12 2v20M2 12h20" />
+                        </svg>
+                        Dominal Owns 100% (Own Ventures)
+                    </h3>
+                    <div class="arch-cards">
+                        <!-- Dominal Technology -->
+                        <div class="arch-card">
+                            <div style="display: flex; justify-content: space-between; align-items: start;">
+                                <span class="arch-card-badge">100% Owned Venture</span>
+                                <div class="arch-card-logo-wrap">
+                                    <img src="dominallogo.png" alt="Dominal Technology Logo">
+                                </div>
+                            </div>
+                            <h3>Dominal Technology</h3>
+                            <p>The official technology, software, and systems division of the group. Powers operations
+                                with advanced mobile applications, enterprise code, scaling, and cloud solutions.</p>
+                        </div>
+                        <!-- Aptimate Software -->
+                        <div class="arch-card">
+                            <span class="arch-card-badge">100% Owned Venture</span>
+                            <h3>Aptimate Software</h3>
+                            <p>The educational software arm of the group, developing smart exam prep platforms and
+                                digital school/college administration systems (ERP) built for educational growth.</p>
+                        </div>
+                        <!-- AI Agentic SAAS Software -->
+                        <div class="arch-card">
+                            <span class="arch-card-badge">100% Owned Venture</span>
+                            <h3>AI Agentic SAAS Software</h3>
+                            <p>Our dedicated enterprise division specializing in autonomous AI workflows, building smart
+                                agents that integrate directly into companies to streamline operations and scale
+                                automation.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- Centerpiece Logo & Group Name below Portfolio Grid -->
+            <div class="reveal"
+                style="text-align: center; margin-top: 5rem; display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 1.25rem;">
+                <img src="dominalgrp.jpg" alt="Dominal Group Logo"
+                    style="height: 80px; width: auto; border-radius: var(--r-md); box-shadow: var(--shadow-md);">
+                <div
+                    style="font-family: var(--font-display); font-size: 2.2rem; font-weight: 700; color: var(--primary);">
+                    Dominal Group</div>
+            </div>
+        </div>
+    </section>
+
+    <!-- For Startup Founders Section -->
+    <section id="founders" class="section section-alt">
+        <div class="container">
+            <div class="section-header reveal">
+                <span class="section-eyebrow-small">Joint Venture Opportunities</span>
+                <h2 class="section-h2">For startup founders / ideas by founders</h2>
+                <p class="section-p">If you bring the idea and you can handle the business, Dominal will invest in you
+                    and partner you as the business partner of Dominal and help you build the business together.</p>
+            </div>
+
+            <div class="founders-card reveal">
+                <div class="founders-tagline">
+                    &ldquo;You bring the <em>idea & operations</em>. We bring the <em>technology & scale</em>.&rdquo;
+                </div>
+                <p class="founders-desc">
+                    If you bring the idea and you can handle the business, Dominal will invest in you and partner you as
+                    the business partner of Dominal and help you build the business together.
+                </p>
+                <div class="founders-grid">
+                    <div class="founder-feat">
+                        <svg viewBox="0 0 24 24">
+                            <polyline points="20 6 9 17 4 12" />
+                        </svg>
+                        <div>
+                            <h4>Capital & Technology Cost Absorption</h4>
+                            <p>We fund the software engineering and cloud infrastructure costs so you can bootstrap
+                                efficiently without heavy cash burdens.</p>
+                        </div>
+                    </div>
+                    <div class="founder-feat">
+                        <svg viewBox="0 0 24 24">
+                            <polyline points="20 6 9 17 4 12" />
+                        </svg>
+                        <div>
+                            <h4>AI & Digital Scale Operations</h4>
+                            <p>Get instant access to Dominal Technology's developers, digital marketers, and enterprise
+                                scaling frameworks.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Services Offered -->
+    <section id="services" class="section">
+        <div class="container">
+            <div class="section-header reveal">
+                <span class="section-eyebrow-small">Capabilities & Expertise</span>
+                <h2 class="section-h2">Services & Partnerships We Offer</h2>
+                <p class="section-p">Dominal functions as a full-service operational and technological partner,
+                    building, marketing, and scaling firms from the ground up.</p>
+            </div>
+
+            <div class="services-grid">
+                <!-- All in One Growth -->
+                <div class="service-card featured reveal">
+                    <div class="service-icon-box">
+                        <svg viewBox="0 0 24 24">
+                            <circle cx="12" cy="12" r="10" />
+                            <path
+                                d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z" />
+                            <line x1="2" y1="12" x2="22" y2="12" />
+                        </svg>
+                    </div>
+                    <h3>All-in-One Growth Partner</h3>
+                    <p>We take complete operational and strategic control of your company's online expansion. Dominal
+                        combines software development, digital marketing, business building, and workflow scaling into
+                        one unified growth engine — aligning incentives through customized revenue-share or equity
+                        models.</p>
+                </div>
+
+                <!-- Software Development -->
+                <div class="service-card reveal">
+                    <div class="service-icon-box">
+                        <svg viewBox="0 0 24 24">
+                            <rect x="2" y="3" width="20" height="14" rx="2" />
+                            <path d="M8 21h8M12 17v4" />
+                        </svg>
+                    </div>
+                    <h3>Software Development</h3>
+                    <p>From enterprise web dashboards and high-speed e-commerce systems to custom iOS/Android apps and
+                        cloud databases. Our engineers build secure, clean, and highly scalable software solutions.</p>
+                </div>
+
+                <!-- Business Building -->
+                <div class="service-card reveal reveal-delay-1">
+                    <div class="service-icon-box">
+                        <svg viewBox="0 0 24 24">
+                            <path d="M22 10v6M2 10v6M12 2v20" />
+                            <rect x="6" y="6" width="12" height="12" rx="2" />
+                        </svg>
+                    </div>
+                    <h3>Business Building</h3>
+                    <p>We help partners build operational structures, design supply chains, organize backend logistical
+                        pipelines, recruit talent, and establish governance models for long-term scalability.</p>
+                </div>
+
+                <!-- Business Development -->
+                <div class="service-card reveal">
+                    <div class="service-icon-box">
+                        <svg viewBox="0 0 24 24">
+                            <path d="M16 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2" />
+                            <circle cx="9" cy="7" r="4" />
+                            <line x1="19" y1="8" x2="19" y2="14" />
+                            <line x1="22" y1="11" x2="16" y2="11" />
+                        </svg>
+                    </div>
+                    <h3>Business Development</h3>
+                    <p>Unlocking new commercial revenue channels, managing enterprise clients, facilitating trade and
+                        distribution networks, and building strategic B2B expansion opportunities.</p>
+                </div>
+
+                <!-- Online Marketing -->
+                <div class="service-card reveal reveal-delay-1">
+                    <div class="service-icon-box">
+                        <svg viewBox="0 0 24 24">
+                            <path d="M23 6l-9.5 9.5-5-5L1 18" />
+                            <polyline points="17 6 23 6 23 12" />
+                        </svg>
+                    </div>
+                    <h3>Online Marketing</h3>
+                    <p>Driving high-intent acquisition traffic through organic search, scaling social channels,
+                        executing performance ad strategies, optimizing conversion funnels, and managing e-commerce
+                        sales.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- How We Work (SVG Animation Section) -->
+    <section id="how-it-works" class="section section-alt">
+        <div class="container model-visual-grid">
+            <div class="model-visual-left reveal">
+                <div class="svg-container">
+                    <svg viewBox="0 0 400 400" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <style>
+                            @keyframes pulseNode {
+
+                                0%,
+                                100% {
+                                    transform: scale(1);
+                                    opacity: 0.95;
+                                }
+
+                                50% {
+                                    transform: scale(1.05);
+                                    opacity: 1;
+                                }
+                            }
+
+                            @keyframes spinCircle {
+                                to {
+                                    transform: rotate(360deg);
+                                }
+                            }
+
+                            @keyframes flowLines {
+                                to {
+                                    stroke-dashoffset: -32;
+                                }
+                            }
+
+                            .node-hub-core {
+                                transform-origin: 200px 200px;
+                                animation: pulseNode 3.5s ease-in-out infinite;
+                            }
+
+                            .orbit-inner-line {
+                                transform-origin: 200px 200px;
+                                animation: spinCircle 40s linear infinite;
+                            }
+
+                            .orbit-outer-line {
+                                transform-origin: 200px 200px;
+                                animation: spinCircle 65s linear infinite reverse;
+                            }
+
+                            .flow-connection {
+                                stroke-dasharray: 6 6;
+                                animation: flowLines 2s linear infinite;
+                            }
+                        </style>
+
+                        <!-- Background Grids inside SVG -->
+                        <circle cx="200" cy="200" r="190" stroke="#f1f5f9" stroke-width="1.5" />
+                        <circle cx="200" cy="200" r="140" stroke="#f1f5f9" stroke-width="1.2" />
+                        <circle cx="200" cy="200" r="95" stroke="#cbd5e1" stroke-width="1" stroke-dasharray="4 4" />
+
+                        <!-- Flow Lines from Hub to Satellites -->
+                        <line class="flow-connection" x1="200" y1="150" x2="200" y2="60" stroke="#6366f1"
+                            stroke-width="1.5" />
+                        <line class="flow-connection" x1="200" y1="250" x2="200" y2="340" stroke="#10b981"
+                            stroke-width="1.5" />
+                        <line class="flow-connection" x1="150" y1="200" x2="60" y2="200" stroke="#3b82f6"
+                            stroke-width="1.5" />
+                        <line class="flow-connection" x1="250" y1="200" x2="340" y2="200" stroke="#8b5cf6"
+                            stroke-width="1.5" />
+
+                        <!-- Connecting Diagonals -->
+                        <line class="flow-connection" x1="165" y1="165" x2="100" y2="100" stroke="#cbd5e1"
+                            stroke-width="1" />
+                        <line class="flow-connection" x1="235" y1="235" x2="300" y2="300" stroke="#cbd5e1"
+                            stroke-width="1" />
+
+                        <!-- Inner Orbit elements -->
+                        <g class="orbit-inner-line">
+                            <circle cx="200" cy="105" r="4" fill="#6366f1" />
+                            <circle cx="200" cy="295" r="4" fill="#10b981" />
+                            <circle cx="105" cy="200" r="4" fill="#3b82f6" />
+                            <circle cx="295" cy="200" r="4" fill="#8b5cf6" />
+                        </g>
+
+                        <!-- Outer Orbit elements -->
+                        <g class="orbit-outer-line">
+                            <circle cx="200" cy="60" r="3" fill="#cbd5e1" />
+                            <circle cx="200" cy="340" r="3" fill="#cbd5e1" />
+                            <circle cx="60" cy="200" r="3" fill="#cbd5e1" />
+                            <circle cx="340" cy="200" r="3" fill="#cbd5e1" />
+                        </g>
+
+                        <!-- Satellite Node 1: Tech Venture -->
+                        <g>
+                            <circle cx="200" cy="60" r="24" fill="#ffffff" stroke="#0B2343" stroke-width="1.8" />
+                            <text x="200" y="58" font-family="Inter, sans-serif" font-size="6" fill="#0f172a"
+                                text-anchor="middle" font-weight="700">Dominal</text>
+                            <text x="200" y="66" font-family="Inter, sans-serif" font-size="6" fill="#6366f1"
+                                text-anchor="middle" font-weight="600">Tech</text>
+                        </g>
+
+                        <!-- Satellite Node 2: Edu Venture -->
+                        <g>
+                            <circle cx="200" cy="340" r="24" fill="#ffffff" stroke="#0B2343" stroke-width="1.8" />
+                            <text x="200" y="338" font-family="Inter, sans-serif" font-size="6" fill="#0f172a"
+                                text-anchor="middle" font-weight="700">Aptimate</text>
+                            <text x="200" y="346" font-family="Inter, sans-serif" font-size="6" fill="#10b981"
+                                text-anchor="middle" font-weight="600">Edu</text>
+                        </g>
+
+                        <!-- Satellite Node 3: AI SAAS -->
+                        <g>
+                            <circle cx="340" cy="200" r="24" fill="#ffffff" stroke="#0B2343" stroke-width="1.8" />
+                            <text x="340" y="198" font-family="Inter, sans-serif" font-size="6" fill="#0f172a"
+                                text-anchor="middle" font-weight="700">AI Agentic</text>
+                            <text x="340" y="206" font-family="Inter, sans-serif" font-size="6" fill="#8b5cf6"
+                                text-anchor="middle" font-weight="600">SaaS</text>
+                        </g>
+
+                        <!-- Satellite Node 4: Brands Partnerships -->
+                        <g>
+                            <circle cx="60" cy="200" r="24" fill="#ffffff" stroke="#0B2343" stroke-width="1.8" />
+                            <text x="60" y="198" font-family="Inter, sans-serif" font-size="6" fill="#0f172a"
+                                text-anchor="middle" font-weight="700">Partner</text>
+                            <text x="60" y="206" font-family="Inter, sans-serif" font-size="6" fill="#3b82f6"
+                                text-anchor="middle" font-weight="600">Brands</text>
+                        </g>
+
+                        <!-- Central Core Hub Node -->
+                        <g class="node-hub-core">
+                            <circle cx="200" cy="200" r="44" fill="#0B2343" />
+                            <circle cx="200" cy="200" r="40" fill="none" stroke="#ffffff" stroke-width="0.8"
+                                stroke-dasharray="3 3" />
+                            <text x="200" y="197" font-family="Instrument Serif, serif" font-size="12" fill="#ffffff"
+                                text-anchor="middle" font-weight="700">Dominal</text>
+                            <text x="200" y="209" font-family="Inter, sans-serif" font-size="7" fill="#cbd5e1"
+                                text-anchor="middle" letter-spacing="0.08em">ENGINE</text>
+                        </g>
+                    </svg>
+                </div>
+            </div>
+            <div class="reveal reveal-delay-1">
+                <span class="section-eyebrow-small">Operation Mechanics</span>
+                <h2 class="section-h2" style="margin-bottom: 1.5rem;">How Dominal Operates</h2>
+                <div class="how-works-text">
+                    <h3>Integration & Joint Ventures</h3>
+                    <p>We work as active operators, not passive advisors. We embed our custom software, automation
+                        blueprints, marketing funnels, and executive leaders into our partner brands to build robust
+                        structural scaling systems.</p>
+                </div>
+                <ul class="bullet-list">
+                    <li class="bullet-item">
+                        <svg viewBox="0 0 24 24">
+                            <polyline points="20 6 9 17 4 12" />
+                        </svg>
+                        <span><strong>Unified Resources:</strong> Custom tech stacks and online architectures built from
+                            scratch.</span>
+                    </li>
+                    <li class="bullet-item">
+                        <svg viewBox="0 0 24 24">
+                            <polyline points="20 6 9 17 4 12" />
+                        </svg>
+                        <span><strong>Expertise Delivery:</strong> Full integration of software, AI Agentic tools, and
+                            online sales scaling.</span>
+                    </li>
+                    <li class="bullet-item">
+                        <svg viewBox="0 0 24 24">
+                            <polyline points="20 6 9 17 4 12" />
+                        </svg>
+                        <span><strong>Shared Alignment:</strong> Structuring customized revenue-share or equity
+                            agreements to assure alignment of outcomes.</span>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact & Inquiry Form -->
+    <section id="contact" class="section">
+        <div class="container contact-grid">
+            <!-- Details -->
+            <div class="reveal">
+                <span class="section-eyebrow-small">Collaborate With Us</span>
+                <h2 class="section-h2">Start Your Partnership Inquiry</h2>
+                <p class="contact-info-p">We look forward to connecting with entrepreneurs, founders, retail groups, and
+                    enterprises seeking high-scale digital operations.</p>
+                <div class="contact-channels">
+                    <!-- WhatsApp -->
+                    <div class="channel-card">
+                        <div class="channel-icon wa">
+                            <i class="fa-brands fa-whatsapp" style="font-size: 22px; color: #25D366;"></i>
+                        </div>
+                        <div class="channel-details">
+                            <span>WhatsApp Helpline</span>
+                            <a href="https://wa.me/918766882442" target="_blank" rel="noopener">+91 8766882442</a>
+                        </div>
+                    </div>
+                    <!-- Instagram -->
+                    <div class="channel-card">
+                        <div class="channel-icon ig">
+                            <i class="fa-brands fa-instagram" style="font-size: 22px; color: #dd2a7b;"></i>
+                        </div>
+                        <div class="channel-details">
+                            <span>Instagram Handle</span>
+                            <a href="https://instagram.com/dominaltech" target="_blank" rel="noopener">@dominaltech</a>
+                        </div>
+                    </div>
+                    <!-- Email -->
+                    <div class="channel-card">
+                        <div class="channel-icon mail">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                                stroke-linecap="round" stroke-linejoin="round" width="20" height="20">
+                                <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z">
+                                </path>
+                                <polyline points="22,6 12,13 2,6"></polyline>
+                            </svg>
+                        </div>
+                        <div class="channel-details">
+                            <span>Corporate Email</span>
+                            <a href="mailto:contact@dominal.in">contact@dominal.in</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Form -->
+            <div class="form-box reveal reveal-delay-1">
+                <form id="inquiryForm">
+                    <div class="form-row">
+                        <div class="fg">
+                            <label for="name">Your Name</label>
+                            <input type="text" id="name" required placeholder="John Doe">
+                        </div>
+                        <div class="fg">
+                            <label for="email">Email Address</label>
+                            <input type="email" id="email" required placeholder="john@company.com">
+                        </div>
+                    </div>
+                    <div class="fg">
+                        <label for="company">Company / Venture</label>
+                        <input type="text" id="company" placeholder="Company Name">
+                    </div>
+                    <div class="fg">
+                        <label for="itype">Inquiry Type</label>
+                        <select id="itype" required>
+                            <option value="" disabled selected>Select Inquiry Type</option>
+                            <option>Strategic Partnership Model</option>
+                            <option>Software & Systems Division</option>
+                            <option>Business Building & Marketing</option>
+                            <option>AI SaaS Integration</option>
+                            <option>Other Venture Inquiry</option>
+                        </select>
+                    </div>
+                    <div class="fg">
+                        <label for="msg">Inquiry Details</label>
+                        <textarea id="msg" required
+                            placeholder="Describe your brand operations or technological requirements..."></textarea>
+                    </div>
+                    <button type="submit" class="form-submit">
+                        Submit Inquiry
+                        <svg xmlns="http://www.w3.org/2000/svg" width="15" height="15" viewBox="0 0 24 24" fill="none"
+                            stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+                            <line x1="5" y1="12" x2="19" y2="12" />
+                            <polyline points="12 5 19 12 12 19" />
+                        </svg>
+                    </button>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container foot-inner">
+            <div class="foot-brand">Dominal Group</div>
+            <div class="foot-links">
+                <a href="https://wa.me/918766882442" target="_blank" rel="noopener">WhatsApp</a>
+                <a href="https://instagram.com/dominaltech" target="_blank" rel="noopener">Instagram</a>
+                <a href="https://dominal.in" target="_blank" rel="noopener">Dominal Tech</a>
+            </div>
+            <div>&copy; 2026 Dominal Group. All rights reserved.</div>
+        </div>
+    </footer>
+
+    <!-- Floating Contacts (WhatsApp and Instagram on the right side) -->
+    <div class="float-btns">
+        <a href="https://wa.me/918766882442" target="_blank" rel="noopener" class="f-btn f-wa"
+            aria-label="WhatsApp Helpline">
+            <!-- Font Awesome WhatsApp Icon (renders pixel-perfect and correct) -->
+            <i class="fa-brands fa-whatsapp" style="font-size: 26px;"></i>
+        </a>
+        <a href="https://instagram.com/dominaltech" target="_blank" rel="noopener" class="f-btn f-ig"
+            aria-label="Instagram Profile">
+            <!-- Font Awesome Instagram Icon (renders pixel-perfect and correct) -->
+            <i class="fa-brands fa-instagram" style="font-size: 26px;"></i>
+        </a>
+    </div>
+
+    <!-- Core Scripts -->
+    <script>
+        // Sticky Header Event
+        const nav = document.getElementById('nav');
+        window.addEventListener('scroll', () => {
+            nav.classList.toggle('scrolled', window.scrollY > 40);
+        }, { passive: true });
+
+        // Drawer Menu Logic
+        const hamburgerBtn = document.getElementById('hamburgerBtn');
+        const mobileDrawer = document.getElementById('mobileDrawer');
+        const drawerOverlay = document.getElementById('drawerOverlay');
+
+        function toggleMenu() {
+            hamburgerBtn.classList.toggle('open');
+            mobileDrawer.classList.toggle('open');
+            drawerOverlay.classList.toggle('open');
+        }
+
+        hamburgerBtn.addEventListener('click', toggleMenu);
+        drawerOverlay.addEventListener('click', toggleMenu);
+
+        // Close Drawer when a link is clicked
+        const drawerLinks = document.querySelectorAll('.drawer-link');
+        drawerLinks.forEach(link => {
+            link.addEventListener('click', () => {
+                hamburgerBtn.classList.remove('open');
+                mobileDrawer.classList.remove('open');
+                drawerOverlay.classList.remove('open');
+            });
+        });
+
+        // Intersection Observer for Reveal Elements
+        const reveals = document.querySelectorAll('.reveal');
+        const revealObs = new IntersectionObserver(entries => {
+            entries.forEach(e => {
+                if (e.isIntersecting) {
+                    e.target.classList.add('visible');
+                    revealObs.unobserve(e.target);
+                }
+            });
+        }, { threshold: 0.08 });
+        reveals.forEach(el => revealObs.observe(el));
+
+        // Preloader Logic based on Video Load state
+        const bgVideo = document.getElementById('bgVideo');
+        const preloader = document.getElementById('preloader');
+
+        function hidePreloader() {
+            if (preloader && !preloader.classList.contains('faded')) {
+                preloader.classList.add('faded');
+                preloader.style.opacity = '0';
+                preloader.style.pointerEvents = 'none';
+                setTimeout(() => {
+                    preloader.style.display = 'none';
+                }, 600);
+            }
+        }
+
+        if (bgVideo) {
+            // Check if metadata/video has already loaded (e.g. cached)
+            if (bgVideo.readyState >= 3) {
+                hidePreloader();
+            } else {
+                bgVideo.addEventListener('canplaythrough', hidePreloader);
+                bgVideo.addEventListener('loadeddata', hidePreloader);
+                bgVideo.addEventListener('playing', hidePreloader);
+                // Safety fallback timeout: 4.5 seconds
+                setTimeout(hidePreloader, 4500);
+            }
+        } else {
+            hidePreloader();
+        }
+
+        // Inquiry Form Handler
+        const form = document.getElementById('inquiryForm');
+        form.addEventListener('submit', e => {
+            e.preventDefault();
+            const btn = form.querySelector('.form-submit');
+            const orig = btn.innerHTML;
+            btn.textContent = 'Sending...';
+            btn.disabled = true;
+            setTimeout(() => {
+                btn.textContent = 'Inquiry Sent!';
+                btn.style.background = '#10b981';
+                form.reset();
+                setTimeout(() => {
+                    btn.innerHTML = orig;
+                    btn.style.background = '';
+                    btn.disabled = false;
+                }, 4000);
+            }, 1200);
+        });
+    </script>
+</body>
+
+</html>
